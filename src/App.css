@@ -1,0 +1,67 @@
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.mainGrid img {
+  display: block;
+}
+.mainGrid {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.mainGrid li {
+  max-width: 25%;
+}
+
+.mainGrid h1 {
+  font-size: 1rem;
+}
+
+.thumbImage {
+  /* width:  50vh; */
+  flex-grow: 1;
+}
+
+.thumbImage img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+
+
+.maingrid ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.maingrid li {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+.maingrid li:last-child {
+  /* // There's no science in using "10" here. In all my testing, this delivered the best results. */
+  flex-grow: 10;
+}
+
+
+
+
+
+/* // Short screens */
+
+@media screen and (max-width: 480px) {
+  .mainGrid {
+    flex-direction: column;
+  }
+}
+
