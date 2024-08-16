@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import App from './App.jsx'
+import './tailwind.css'
 import './index.css'
 
 import { Root } from './components/root'

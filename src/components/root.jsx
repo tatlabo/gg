@@ -26,14 +26,17 @@ function Root() {
         //     </li>)
         //     i++
         // }
-        const cards = items.map( ({name, thumbImg, slug, id}) => {
+        const cards = items.map( ({name, thumbImg, slug, id, description}) => {
             return (
-                <li className="card" key={slug} id={id} data-id={id}>
-                    <h1>{name}</h1>
+                <>
+                <li className="card w-1/3" key={slug} id={id} data-id={id}>
+                    <h1 className="text-3xl font-bold">{name}</h1>
                     <div className="thumbImage">
                         <img src={thumbImg}/>
                     </div>
+                    <p className="">{description}</p>
                 </li>
+                </>
         )
         })      
 
