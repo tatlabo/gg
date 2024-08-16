@@ -5,16 +5,17 @@ import {
   RouterProvider
 } from "react-router-dom";
 import './tailwind.css'
-import './index.css'
+// import './index.css'
 
-import { Root } from './components/root'
+import { Root } from './components/Root.jsx'
 import { rootLoader } from './components/loaders.js';
-
-import Layout from './components/layout';
+import { Css } from './components/Tailwind.jsx'
+import Layout from './components/Layout.jsx';
 
 const router = createBrowserRouter([
   { element: <Layout/>, children: [
     {index: true, path:'/', element: <Root/>, loader: rootLoader },
+    {path: '/css', element: <Css/>}
     ]
   }
 ])
