@@ -47,7 +47,24 @@ const portfolioData = {
             thumbImg: "https://gosiagajewska.com/wpgg/wp-content/uploads/2020/07/Logo-Gosia-Gajewska_new_scalone_white.png",
             mainPage: true,
             id: "1"
+        },
+        {
+            name: "Mermaid",
+            description: "The Mermaid of Warsaw – sign designed in 2015 for the needs of a Warsaw-themed festival.",
+            slug: "mermaid",
+            thumbImg: "https://gosiagajewska.com/wpgg/wp-content/uploads/2018/05/syrenka_alone.jpg",
+            mainPage: true,
+            id: "3"
+        },
+        {
+            name: "Strategic presentation",
+            description: "Strategic Presentation „Strong Magazines in the world of media”for Bauer Publishing House. The presentation was shown at the National Museum in Warsaw, 13.01.2020.",
+            slug: "strategic-presentation",
+            thumbImg: "https://gosiagajewska.com/wpgg/wp-content/uploads/2020/07/Gosia_Gajewska_Prezentacja_Strategiczna_fot1.jpg",
+            mainPage: true,
+            id: "4"
         }
+
     ]
 }
 
@@ -68,12 +85,14 @@ utilsFirebase.rootElements = async (clause) => {
     return { portfolio: portfolioData.portfolio }
 }
 
-// utilsFirebase.rootElements = async (clause) => {
-//     const q = query(portfolio, where(clause, '==', true))
-//     const items = await getDocs(q)
-//     const dataArr = items.docs.map( doc => ({...doc.data(), id: doc.id }))
 
-//     return { portfolio: dataArr }
-// }
+
+utilsFirebase.article = async (clause, slug) => {
+    const q = query(portfolio, where(clause, '==', slug))
+    const items = await getDocs(q)
+    const dataArr = items.docs.map( doc => ({...doc.data(), id: doc.id }))
+
+    return { article: dataArr }
+}
 
 

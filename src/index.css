@@ -1,29 +1,108 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
+:root {
+  --animation: .25s;
+  --font-root: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
-body {
+html {
+  font-family: var(--font-root);
+}
+
+body,
+#root {
   background-color: bisque;
+  margin: 0;
+  padding: 0;
+}
+
+body > * {
+  box-sizing: border-box;
 }
 
 .card {
-  width: unset;
+  width: 100%;
+  aspect-ratio: 1.7777;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  overflow: hidden;
+  position: relative;
 }
+
+.card .header,
+.card .img-container,
+.card .description {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.card h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  /* position: relative; */
+  opacity: 0;
+  background-color: rgb(252, 252, 0);
+  transition: 
+    transform var(--animation) ease-in, 
+    opacity var(--animation) ease-in, 
+    background-color var(--animation) ease-in , 
+    height var(--animation) ease-in;
+  height: 200%;
+  width: 100%;
+  display: flex;
+  transform: translate(0,-50%);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.header:hover {
+  height: 100%;
+  opacity: .75;
+  transform: translate(0,0);
+}
+
+
+.img-container {
+  overflow: hidden;
+}
+
+.card .img-container >  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-container > div {
+  flex: 1 1 33%;
+}
+
+
+
 
 .mainGrid {
+  margin: 0;
+  padding: 0;
   display: flex;
-  gap: 4rem;
+  /* gap: 4rem; */
   flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.h-6 {
+/* .h-6 {
   background-color: aqua;
-}
+} */
 
 @media screen and (min-width: 640px) {
   .card {
-    width: 50%;
+    max-width: 50%;
   }
 
   .mainGrid {
@@ -33,7 +112,7 @@ body {
 
 @media screen and (min-width: 960px) {
   .card {
-    width: 33%;
+    max-width: 33.33%;
   }
 
 }
