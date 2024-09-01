@@ -2,9 +2,9 @@ import { Suspense } from "react"
 import { useNavigate, useLocation, useParams, defer, useLoaderData, Await } from "react-router-dom"
 import { rootLoader } from "./loaders.js"
 
-export { Root }
+export default Works
 
-function Root() {
+function Works() {
     const data = useLoaderData()
 
     function renderElements(data) {
