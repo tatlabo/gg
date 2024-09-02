@@ -75,8 +75,10 @@ nav a:not(:first-child):hover {
   border-bottom: 4px solid var(--accent-color);
 }
 
-nav .active {
-  color: var(--active);
+.works,
+.active {
+  color: red;
+  font-weight: 900;
 }
 
 .dropdownmenu {
