@@ -4,7 +4,7 @@ import { rootLoader } from "./loaders.js"
 
 export { Root }
 
-function Root() {
+function Root({main}) {
     const data = useLoaderData()
 
     function renderElements(data) {
@@ -34,7 +34,7 @@ function Root() {
 
     return (
         <>
-            {descriptionElement}
+            {main && descriptionElement}
             <section className="mainGrid">
                 <Suspense>
                     <Await resolve={data.portfolio}>

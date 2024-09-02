@@ -1,28 +1,51 @@
 import { useLoaderData, useParams, useLocation, Await } from "react-router-dom"
 import { Suspense } from "react"
 export default Work
-export { loader }
+export { loader, genreLoader }
 import { utilsFirebase } from "../utils"
 
 function loader({ params }) {
-    const slugName = params.workSlug
-    return utilsFirebase.article('slug', slugName)
+    return utilsFirebase.article('slug', params.slugName)
 }
 
-function Work() {
+function genreLoader({ params }) {
+    return utilsFirebase.article('genre', params.genre)  
+}
+
+function Work({main}) {
     // const work = useLocation()
-    const articleLoader = useLoaderData()
-    const article = articleLoader.article[0]
-    console.log(article)
+    const data = useLoaderData()
+    const items = data.article
+
+    function renderElements(data) {
+        
+
+        const cards = items.map(({ name, thumbImg, slug, id, description }) => {
+            return (
+                    <article className="card" key={slug} id={id} data-id={id}>
+                        <div className="img-container">
+                            <img src={thumbImg} />
+                        </div>
+                        <h3 className="header">{name}</h3>
+                        {/* <p className="description">{description}</p> */}
+                    </article>
+            )
+        })
+
+        return cards
+    }
+
+
+
     return (
-        <Suspense>
-            <Await resolve={article}>
-                <h1>{article.name}</h1>
-                <div className="img-container">
-                        <img src={article.thumbImg}/>
-                </div>
-                <p>{article.description}</p>
-            </Await>
-        </Suspense>
+        <>
+            <section className="mainGrid">
+                <Suspense>
+                    <Await resolve={data.portfolio}>
+                        {renderElements}
+                    </Await>
+                </Suspense>
+            </section>
+        </>
     )
 }

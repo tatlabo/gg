@@ -38,7 +38,8 @@ const portfolioData = {
             slug: "avant-provocateur-artbook-phd-project",
             mainPage: true,
             thumbImg: "https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/katalog-doktorski__1110501.jpg",
-            id: "2"
+            id: "2",
+            genre: 'poster'
         },
         {
             name: "Avant Provocateur fashion collection",
@@ -46,7 +47,8 @@ const portfolioData = {
             slug: "avant-provocateur fashion-collection",
             thumbImg: "https://gosiagajewska.com/wpgg/wp-content/uploads/2020/07/Logo-Gosia-Gajewska_new_scalone_white.png",
             mainPage: true,
-            id: "1"
+            id: "1",
+            genre: 'print'
         },
         {
             name: "Mermaid",
@@ -54,7 +56,8 @@ const portfolioData = {
             slug: "mermaid",
             thumbImg: "https://gosiagajewska.com/wpgg/wp-content/uploads/2018/05/syrenka_alone.jpg",
             mainPage: true,
-            id: "3"
+            id: "3",
+            genre: 'artwork'
         },
         {
             name: "Strategic presentation",
@@ -62,7 +65,8 @@ const portfolioData = {
             slug: "strategic-presentation",
             thumbImg: "https://gosiagajewska.com/wpgg/wp-content/uploads/2020/07/Gosia_Gajewska_Prezentacja_Strategiczna_fot1.jpg",
             mainPage: true,
-            id: "4"
+            id: "4",
+            genre: 'print'
         }
 
     ]

@@ -4,6 +4,13 @@ import { rootLoader } from "./loaders.js"
 
 export default Works
 
+function loader({ params }) {
+    const slugName = params.workSlug
+    return utilsFirebase.article('slug', slugName)
+}
+
+
+
 function Works() {
     const data = useLoaderData()
 

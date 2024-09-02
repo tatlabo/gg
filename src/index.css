@@ -9,6 +9,9 @@
   --px: 0 5% 0 5%;
   --accent-color: rgb(255, 241, 0);
   --gradient-yellow: radial-gradient(ellipse at center, #efd10eb0 0%,#edde8edc 100%);
+  --active: rgb(23, 22, 82);
+
+  
 }
 
 html,
@@ -34,17 +37,19 @@ body * {
 
 
 nav {
-  color-scheme: dark;
   height: 4rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: .25rem
+  margin-top: .25rem;
+  text-decoration: none;
 }
 
+nav a {
+  text-decoration: none;
+}
 
 nav a:not(:first-child) {
-  text-decoration: none;
   margin-left: 1rem;
   font-weight: 700;
   border-bottom: 4px solid #ebdb0000;
@@ -55,10 +60,38 @@ nav a:first-child {
   margin-right: auto;
 }
 
+/* nav a:nth-child(2) {
+  text-decoration: underline;
+} */
+
+
+.menuWorks {
+  position: relative;
+
+}
 
 nav a:not(:first-child):hover {
   /* background-color: var(--accent-color); */
   border-bottom: 4px solid var(--accent-color);
+}
+
+nav .active {
+  color: var(--active);
+}
+
+.dropdownmenu {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  margin: -.5rem;
+  background-color: #fff;
+  justify-content: center;
+  align-content: center;
+  list-style: none;
+  padding: 1rem;
+  margin: -1rem 0 1rem 0;
+  z-index: 101;
+  border: 1px solid #41dfffc8;
 }
 
 
