@@ -1,43 +1,41 @@
 import { Suspense } from "react"
-import { useNavigate, useLocation, useParams, defer, useLoaderData, Await } from "react-router-dom"
-import { rootLoader } from "./loaders.js"
+import { useLoaderData, Await, Link, defer } from "react-router-dom"
+export { Root, rootLoader }
+import { utilsFirebase } from "../utils.js"
+import Card from "./card.jsx"
 
-export { Root }
 
-function Root({main}) {
-    const data = useLoaderData()
-
-    function renderElements(data) {
-        const items = data.portfolio
-
-        const cards = items.map(({ name, thumbImg, slug, id, description }) => {
-            return (
-                    <article className="card" key={slug} id={id} data-id={id}>
-                        <div className="img-container">
-                            <img src={thumbImg} />
-                        </div>
-                        <h3 className="header">{name}</h3>
-                        {/* <p className="description">{description}</p> */}
-                    </article>
-            )
-        })
-
-        return cards
-    }
-
-    const descriptionElement = <section className="description">
+function Description() {
+    return (
+        <section className="description">
         <h1 className="description-header">Lorem, ipsum dolor.</h1>
         <p className="description-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, corporis commodi ab enim laborum culpa? Officia provident ratione corrupti rem accusantium, quisquam fuga neque nesciunt hic quos, delectus harum aperiam quasi praesentium nulla?
         </p>
-    </section>
+    </section> )
+}
 
+// function rootLoader() {
+//     return defer( utilsFirebase.article('mainPage', true) ) 
+// }
+
+function rootLoader() {
+    return defer ({ article: utilsFirebase.article('mainPage', true) })
+}
+
+ 
+function Root({main}) {
+    const dataPromise = useLoaderData()
+
+    function renderElements(data) {
+        return data.article.map((props) => <Card {...props}/>)
+    }
 
     return (
         <>
-            {main && descriptionElement}
+            {main && <Description/>}
             <section className="mainGrid">
-                <Suspense>
-                    <Await resolve={data.portfolio}>
+                <Suspense fallback={<h2>Loading artworks...</h2>}> 
+                    <Await resolve={dataPromise.article}>
                         {renderElements}
                     </Await>
                 </Suspense>

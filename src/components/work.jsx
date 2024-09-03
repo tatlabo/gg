@@ -1,47 +1,42 @@
-import { useLoaderData, useParams, useLocation, Await } from "react-router-dom"
+import { useLoaderData, useParams, useLocation, Await, defer } from "react-router-dom"
 import { Suspense } from "react"
 export default Work
-export { loader, genreLoader }
+export { loader }
 import { utilsFirebase } from "../utils"
 
 function loader({ params }) {
-    return utilsFirebase.article('slug', params.slugName)
+    console.log(params)
+    return defer({ article: utilsFirebase.article('slug', params.slug)})
 }
 
-function genreLoader({ params }) {
-    return utilsFirebase.article('genre', params.genre)  
-}
 
-function Work({main}) {
-    // const work = useLocation()
+
+function Work() {
     const data = useLoaderData()
-    const items = data.article
 
-    function renderElements(data) {
-        
+    function renderElements(item) {
 
-        const cards = items.map(({ name, thumbImg, slug, id, description }) => {
-            return (
+        const cards = item.article.map(({ name, thumbImg, slug, id, description }) => {
+            return (<>
                     <article className="card" key={slug} id={id} data-id={id}>
                         <div className="img-container">
                             <img src={thumbImg} />
                         </div>
                         <h3 className="header">{name}</h3>
-                        {/* <p className="description">{description}</p> */}
                     </article>
+                    <p className="description-paragraph">{description}</p>
+            </>
             )
         })
 
         return cards
     }
 
-
-
     return (
         <>
             <section className="mainGrid">
-                <Suspense>
-                    <Await resolve={data.portfolio}>
+                <Suspense fallback={<h2>Loading artworks...</h2>}>
+                    <Await resolve={data.article}>
                         {renderElements}
                     </Await>
                 </Suspense>
