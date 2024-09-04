@@ -43,8 +43,18 @@ const utilsFirebase = {}
 // }
 
 
-utilsFirebase.article = async (clause, slug, all = false) => {
+utilsFirebase.article = async (clause, slug) => {
+    
+    const q = query(fbDB, where(clause, '==', slug))
+    const items = await getDocs(q)
+    const dataArr = items.docs.map( doc => ({...doc.data(), id: doc.id }))
+    return { article: dataArr }
+}
 
+
+
+utilsFirebase.genre = async (clause = 'genre', slug, all = false) => {
+    
     if (all) {
         const data = await getDocs( fbDB )
         const dataArr = data.docs.map(doc => ({
@@ -55,32 +65,13 @@ utilsFirebase.article = async (clause, slug, all = false) => {
         return { article: dataArr }
     }
 
-    const q = query(fbDB, where(clause = 'genre', 'array-contains-any', [slug]))
+    const q = query(fbDB, where(clause, 'array-contains-any', [slug]))
+
     const items = await getDocs(q)
     const dataArr = items.docs.map( doc => ({...doc.data(), id: doc.id }))
+
     return { article: dataArr }
 }
-
-
-
-// utilsFirebase.genre = async (clause = 'genre', slug, all = false) => {
-    
-//     if (all) {
-//         const data = await getDocs( fbDB )
-//         const dataArr = data.docs.map(doc => ({
-//             ...doc.data(),
-//             id: doc.id
-//         }))
-    
-//         return { article: dataArr }
-//     }
-
-//     const q = query(fbDB, where(clause, 'array-contains-any', [slug]))
-//     const items = await getDocs(q)
-//     const dataArr = items.docs.map( doc => ({...doc.data(), id: doc.id }))
-
-//     return { article: dataArr }
-// }
 
 
 

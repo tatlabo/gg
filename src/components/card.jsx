@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function Card({ name, thumbImg, slug, id }) {
     return (
-        <article className="card" key={slug} id={id} data-id={id}>
+        <article className="card" id={id} data-id={id}>
             <div className="img-container">
                 <img src={thumbImg} />
             </div>

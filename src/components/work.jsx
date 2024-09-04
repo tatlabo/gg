@@ -5,7 +5,6 @@ export { loader }
 import { utilsFirebase } from "../utils"
 
 function loader({ params }) {
-    console.log(params)
     return defer({ article: utilsFirebase.article('slug', params.slug)})
 }
 
@@ -15,7 +14,6 @@ function Work() {
     const data = useLoaderData()
 
     function renderElements(item) {
-
         const cards = item.article.map(({ name, thumbImg, slug, id, description }) => {
             return (<>
                     <article className="card" key={slug} id={id} data-id={id}>
@@ -28,9 +26,9 @@ function Work() {
             </>
             )
         })
-
         return cards
     }
+
 
     return (
         <>

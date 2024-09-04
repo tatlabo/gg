@@ -13,7 +13,7 @@ import { Css } from './components/Tailwind.jsx'
 import Works from './components/genre.jsx';
 import Work from './components/work.jsx';
 import { loader as workLoader } from './components/work.jsx';
-import { loader as worksLoader } from './components/genre.jsx';
+
 import { genreLoader } from './components/genre.jsx';
 import Layout from './components/layout.jsx';
 import { Bio } from './components/bio.jsx'

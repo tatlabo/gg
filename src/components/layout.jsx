@@ -40,7 +40,6 @@ function Navbar({ children }) {
     const menuWork = 'work'
     
     function handleClick(event) {
-        console.log(event.target.dataset.id)
         switch (event.target.dataset.id) {
             case menuItem:
                 setMenu((prev) => prev = !prev); break
