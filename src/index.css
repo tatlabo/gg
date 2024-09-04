@@ -5,17 +5,17 @@
 :root {
   --animation: .25s;
   --font-root: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color-scheme: light;
   --px: 0 5% 0 5%;
   --accent-color: rgb(255, 241, 0);
   --gradient-yellow: radial-gradient(ellipse at center, #efd10eb0 0%,#edde8edc 100%);
   --active: rgb(23, 22, 82);
-
-  
+  --dark: rgb(8,8,16);
 }
+
 
 html,
 body {
+  color-scheme: dark;
   font-family: var(--font-root);
 }
 
@@ -28,6 +28,7 @@ body,
   /* background-color: rgb(131, 131, 131); */
   margin: 0;
   padding: 0;
+
 }
 
 body * {
@@ -98,17 +99,19 @@ nav a:not(:first-child):hover {
 
 
 nav,
-.description-header,
-.description-paragraph,
+.description h1,
+.description p,
 .bio {
   padding: var(--px)
 }
 
-.description {
-  background-color: var(--accent-color);
+.description p img {
+  width: 100%;
 }
 
 .description {
+  background-color: var(--accent-color);
+  color: black;
   padding-top: 1.75rem;
   padding-bottom: 3rem;
 }
@@ -234,4 +237,11 @@ nav {
   margin-left: auto;
   margin-right: auto;
   max-width: 56rem;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .description {
+    color: var(--dark);
+  }
 }

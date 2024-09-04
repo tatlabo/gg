@@ -51,6 +51,11 @@ utilsFirebase.article = async (clause, slug) => {
     return { article: dataArr }
 }
 
+utilsFirebase.byId = async (id) => {
+    const docRef = doc(db, "gosia-gajewska-portfolio", id)
+    const item = await getDoc(docRef)
+    return {...item.data(), id: item.id }
+}
 
 
 utilsFirebase.genre = async (clause = 'genre', slug, all = false) => {
