@@ -30,17 +30,6 @@ function Work() {
 
     function renderElements(item) {
         const cards = item.article.map(({ name, thumbImg, slug, id, description, ...rest }) => {
-            // if (rest.html) {
-
-            //     for( let [k,v] of Object.entries(rest.html) ) {
-            //         console.log(k)
-            //         console.log(v)
-            //     }
-            // }
-
-            // const dSIH_header = {__html: rest.html.header }
-            // const dSIH_paragraph = {__html: rest.html.description }
-
 
             return (<section key={slug} className="description">
                     <article className="card" key={slug} id={id} data-id={id}>
