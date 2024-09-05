@@ -9,7 +9,6 @@ import './index.css'
 
 import { Root } from './components/root.jsx'
 import { rootLoader } from './components/root.jsx';
-import { Css } from './components/Tailwind.jsx'
 import Works from './components/genre.jsx';
 import Work from './components/work.jsx';
 import { loader as workLoader } from './components/work.jsx';
@@ -27,7 +26,6 @@ const router = createBrowserRouter([
       worksList={['all', 'print', 'sign', 'poster', 'artwork']} />, 
     children: [
       {index: true, path:'/', element: <Root main={true}/>, loader: rootLoader },
-      {path: '/css', element: <Css/>},
       {path: '/work/:slug', element: <Work/>, loader: workLoader },
       // {path: '/works', element: <Root main/>, loader: rootLoader },
       {path: '/bio', element: <Bio/>},

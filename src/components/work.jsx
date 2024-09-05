@@ -31,18 +31,17 @@ function Work() {
     function renderElements(item) {
         const cards = item.article.map(({ name, thumbImg, slug, id, description, ...rest }) => {
 
-            return (<>
+            return (
                 <section key={slug} className="description">
                     <p>
                         {description}
                     </p>
+                    <div className="flex column">
+
+                     {rest?.html && Parser().parse(rest.html)}
+                    </div>
                 </section>
-                <section className="description flex column m-l-0 left">
-                    {rest?.html && Parser().parse(rest.html)}
-                </section>
-                <div className="inner-html" >
-                </div>
-            </>
+
             )
         })
         return cards

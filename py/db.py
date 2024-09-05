@@ -53,7 +53,21 @@ db = [
     'genre': ['print', 'artwork'], 
     'id': "5", 
     'mainPage': True, 
-    'html': '<img class="pf_img" src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg"     alt=""> <img class="pf_img"     src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr2_10.jpg"     alt=""> <img class="pf_img"     src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg" alt=""> <img class="pf_img"     src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr7.jpg" alt="">', 
+        'html': '''
+        <h1>Scholarship of the Minister of Culture</h1>
+        <p>Scholarship of the Minister of Culture and National Heritage in the Young Poland program, 2012. Visual Arts category,
+            Avant Provocateur project – fashion as an aesthetic rebellion.</p>
+        
+            <img src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg"
+                alt=""> <img 
+                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr2_10.jpg"
+                alt=""> <img 
+                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg" alt="">
+            <img
+                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr7.jpg"
+                alt="">
+        
+    ''', 
     'slug': 'christmas-trees',
 
 },
@@ -67,11 +81,19 @@ db = [
     'mainPage': True, 
     'html': '''
         <h1>Scholarship of the Minister of Culture</h1>
-        <p>Scholarship of the Minister of Culture and National Heritage in the Young Poland program, 2012. Visual Arts category, Avant Provocateur project – fashion as an aesthetic rebellion.</p>
-        <img class="pf_img" src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg"     
-        alt=""> <img class="pf_img"     src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr2_10.jpg"    
-        alt=""> <img class="pf_img"     src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg" alt=""> <img class="pf_img"    
-        src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr7.jpg" alt="">''', 
+        <p>Scholarship of the Minister of Culture and National Heritage in the Young Poland program, 2012. Visual Arts category,
+            Avant Provocateur project – fashion as an aesthetic rebellion.</p>
+        
+            <img src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg"
+                alt=""> <img 
+                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr2_10.jpg"
+                alt=""> <img 
+                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg" alt="">
+            <img
+                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr7.jpg"
+                alt="">
+        
+    ''', 
     'slug': 'scholarship-of-the-minister-of-Culture',
 
 }

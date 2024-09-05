@@ -5,7 +5,7 @@
 :root {
   --animation: .25s;
   --font-root: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --px: 0 5vw 0 5vw;
+  --px: 0 5% 0 5%;
   --accent-color: rgb(255, 241, 0);
   --gradient-yellow: radial-gradient(ellipse at center, #efd10eb0 0%,#edde8edc 100%);
   --active: rgb(23, 22, 82);
@@ -30,7 +30,7 @@ body,
 
 body * {
   box-sizing: border-box;
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
 }
 
 
@@ -103,14 +103,19 @@ nav,
 
 
 .description > img {
+  padding: var(--px);
   width: 100%;
   max-width: 56rem
 }
 
+.description  img {
+  display: block;
+  margin: 0 auto;
+}
 
 .flex{
-  display: unset
-
+  display: flex;
+  align-items: start;
 }
 
 .m-l-0 > *{
@@ -121,26 +126,30 @@ nav,
 .column {
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
 }
 
 
-.column > * {
-  align-self: flex-start;
-}
-
-
-.grid {
-  display: grid;
-}
 
 .description {
   background-color: var(--accent-color);
   color: black;
-  padding-top: 1.75rem;
-  padding-bottom: 3rem;
+  margin: 0;
+  display: grid;
 }
+
+
+/* .description > * {
+  margin: 0;
+  justify-self: start;
+} */
+
+
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 56rem;
+}
+
 
 
 nav .logo {
@@ -229,10 +238,6 @@ nav .logo {
     max-width: 50%;
   }
 
-  :root {
-    --px: 0 2rem 0 2rem;
-  }
-
   .mainGrid {
     flex-direction: row;
   }
@@ -279,10 +284,6 @@ nav .logo {
   height: 100%;
   opacity: 1;
   transform: translate(0, 0);
-
-
-  background: rgb(63,251,66);
-  background: radial-gradient(circle, rgba(63,251,66,1) 34%, rgba(252,70,107,0) 100%); 
 }
 
 .bio {
@@ -291,24 +292,6 @@ nav .logo {
   padding-bottom: 2rem;
 }
 
-
-.bio > * ,
-.description > *,
-.description div p,
-.description div h1,
-nav {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 56rem;
-}
-
-.description * img {
-  width: 100%;
-  display: block;
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 
 /* @media (prefers-color-scheme: dark) {
