@@ -13,10 +13,11 @@ firebase_admin.initialize_app(cred, {
 database = firestore.client()
 collection_name = 'gosia-gajewska-portfolio'
 
-# collection = database.collection("gosia-gajewska-portfolio").stream()
+
+collection = database.collection("gosia-gajewska-portfolio").stream()
+
 # for k in collection:
 #     print(k.to_dict())
-
 
 
 firebase_db = database.collection(collection_name)
@@ -31,13 +32,9 @@ def put_into_db(db):
             'id': item['id'],
             'mainPage': item['mainPage'],
             'genre': item['genre'],
-            'html': item['html']
+            'html': item['html'],
+            'createdAt': firestore.SERVER_TIMESTAMP,
+            'updatedAt': firestore.SERVER_TIMESTAMP,
         })
 	
 put_into_db(db)
-
-# for single_item in db:
-# 	firebase_db.document(single_item['id']).set({ *single_item })
-# for k, v in single_item.items():
-# 	firebase_db.document(id).set({k: v})
-		

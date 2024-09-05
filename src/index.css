@@ -10,18 +10,15 @@
   --gradient-yellow: radial-gradient(ellipse at center, #efd10eb0 0%,#edde8edc 100%);
   --active: rgb(23, 22, 82);
   --dark: rgb(8,8,16);
+  --grey: rgb(83, 83, 83);
 }
 
 
 html,
 body {
-  color-scheme: dark;
   font-family: var(--font-root);
 }
 
-/* body {
-  background-image: linear-gradient(to right bottom, #eb0c8b, #ff3869, #ff6947, #ff9923, #ffc500, #f3d600, #e3e800, #cef903, #c2f507, #b6f00b, #aaec10, #9ee714);
-} */
 
 body,
 #root {
@@ -33,7 +30,7 @@ body,
 
 body * {
   box-sizing: border-box;
-  /* border: 1px dotted red; */
+  border: 1px dotted red;
 }
 
 
@@ -53,7 +50,6 @@ nav a {
 nav a:not(:first-child) {
   margin-left: 1rem;
   font-weight: 700;
-  border-bottom: 4px solid #ebdb0000;
 }
 
 nav a:first-child {
@@ -61,9 +57,6 @@ nav a:first-child {
   margin-right: auto;
 }
 
-/* nav a:nth-child(2) {
-  text-decoration: underline;
-} */
 
 
 .menuWorks {
@@ -72,14 +65,17 @@ nav a:first-child {
 }
 
 nav a:not(:first-child):hover {
-  /* background-color: var(--accent-color); */
-  border-bottom: 4px solid var(--accent-color);
+  color: unset;
 }
 
-.works,
+.works {
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .active {
-  color: red;
-  font-weight: 900;
+  color: rgb(0, 145, 31);
+  font-weight: 700;
 }
 
 .dropdownmenu {
@@ -105,9 +101,29 @@ nav,
   padding: var(--px)
 }
 
-.description p img {
+
+.description > img {
   width: 100%;
+  max-width: 56rem
 }
+
+
+.flex{
+  display: flex;
+  align-items: start;
+}
+
+.m-l-0 > *{
+  margin-left: 0;
+}
+
+
+.column {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
 
 .description {
   background-color: var(--accent-color);
@@ -130,6 +146,17 @@ nav .logo {
   position: relative;
 }
 
+.card .header{
+  display: flex;
+  flex: 1 1 100;
+  flex-direction: column;
+  color: var(--grey);
+}
+
+.card .header a {
+  color: var(--dark);
+}
+
 .card .header,
 .card .img-container,
 .card .description {
@@ -137,10 +164,21 @@ nav .logo {
   grid-row: 1;
 }
 
-.card h3 {
-  padding: 0;
+.card h1,
+.card h2 {
+  padding: .5em;
   margin: 0;
+  width: 100%;
 }
+
+.card .header h2 {
+  font-size: .75rem;
+}
+
+.card .header h1 {
+  background-color: var(--accent-color)
+}
+
 
 
 .img-container {
@@ -240,8 +278,25 @@ nav {
 }
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
+
+  #root {
+    background-color: #41dfff;
+  }
+
   .description {
     color: var(--dark);
   }
-}
+} */
+
+/* 
+@media (prefers-color-scheme: light) {
+
+  #root {
+    background-color: #cdf7ff;
+  }
+
+  .description {
+    color: var(--dark);
+  }
+} */

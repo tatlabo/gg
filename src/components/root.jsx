@@ -27,7 +27,7 @@ function Root({main}) {
     const dataPromise = useLoaderData()
 
     function renderElements(data) {
-        return data.article.map((props) => <Card key={props.id} {...props}/>)
+        return data.article.map((props) => <Card key={props.id} {...props}/>).sort((a,b) => b.props.createdAt -a .props.createdAt )
     }
 
     return (

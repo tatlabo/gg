@@ -25,25 +25,24 @@ function Work() {
         }
     }
 
-    // datgaFromPromise(data.doc)
-    //     .then( res => console.log(res))
+    datgaFromPromise(data.doc)
+        .then( res => console.log(res))
 
     function renderElements(item) {
         const cards = item.article.map(({ name, thumbImg, slug, id, description, ...rest }) => {
 
-            return (<section key={slug} className="description">
-                    <article className="card" key={slug} id={id} data-id={id}>
-                        <div className="img-container">
-                            <img src={thumbImg} />
-                        </div>
-                        <h3 className="header">{name}</h3>
-                    </article>
-                    <p className="description-paragraph">
+            return (<>
+                <section key={slug} className="description">
+                    <p>
                         {description}
-
                     </p>
-                        {rest?.html && Parser().parse(rest.html)}
                 </section>
+                <section className="description flex column m-l-0 left">
+                    {rest?.html && Parser().parse(rest.html)}
+                </section>
+                <div className="inner-html" >
+                </div>
+            </>
             )
         })
         return cards

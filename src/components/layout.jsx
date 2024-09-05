@@ -63,7 +63,7 @@ function Navbar({ children }) {
         <Link to='/' className="logo"><img src={logoImg} className="logo"/></Link>
         <div className="menuWorks">
             <div id={menuItem}  
-                className={ active.includes(menuItem) || active.includes(menuWork) ? 'active'  : ""} 
+                className={ active.includes(menuItem) || active.includes(menuWork) ? 'active works'  : 'works'} 
                 data-id='works'>
                     Works
             </div >
