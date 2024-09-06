@@ -28,18 +28,26 @@ function Work() {
     datgaFromPromise(data.doc)
         .then( res => console.log(res))
 
+    function image(data) {
+        return <img src={data.src} alt={data.alt}/>
+    }
+    
+
     function renderElements(item) {
         const cards = item.article.map(({ name, thumbImg, slug, id, description, ...rest }) => {
 
             return (
                 <section key={slug} className="description">
                     <p>
-                        {description}
+                        { !rest?.html.length > 0 && description}
                     </p>
                     <div className="flex column">
-
-                     {rest?.html && Parser().parse(rest.html)}
+                        {rest?.html && Parser().parse(rest.html)}
                     </div>
+                    <div className="flex column">
+                        {rest?.images.length > 0 && rest.images.map(item => image(item))}
+                    </div>
+
                 </section>
 
             )

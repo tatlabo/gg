@@ -8,7 +8,12 @@ db = [
     'mainPage': True, 
     'html': '<p>The subject of my PhD thesis is „AVANT PROVOCATEUR – fashion as aesthetic rebellion „.  In 2012 as a result of my study, research, creative thoughts and experience my PhD project started taking shape.  In Avant Provocateur fashion collection I am trying to blur the harmful boundary between people with and without disability. The collection consist of eight corrective garments intended for all women. I would like my clothes to be the medium through which non-disabled people will explore the world of people with disabilities and get used to it. I belive, that main role of the role of the clothing is not to beautify the body of a person but support its physical condition and health, make the body feel comfortable. This way the art of fashion would make a lot of sense. Therfore, my entire collection has a sporty character. Clothes are mainly made of medical and healthy materials. I used healthy wool fabric, lycra, breathable fabric with silver ions, beneficial health mustard seeds for filling and splinting thermoplastics.</p>', 
     'slug': 'avant-provocateu-fashion-collection',
-
+    'images': [
+    {
+        "src": 'https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/katalog-doktorski__1110501.jpg',
+        "alt": 'katalog doktorski'
+    }
+    ]
 },
 
 {
@@ -18,9 +23,14 @@ db = [
     'name': 'Avant Provocateur artbook – phd project', 
     'id': "2", 
     'mainPage': True, 
-    'html': '<h1>Marmaid HTML</h1>',
+    'html': '',
     'slug': 'avant-provocateur-artbook-phd-project',
-
+    'images': [
+        {
+            "src": 'https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/katalog-doktorski__1110501.jpg',
+            "alt": 'katalog doktorski'
+        }
+    ]
 },
 
 {
@@ -32,7 +42,7 @@ db = [
     'mainPage': True, 
     'html': '<h1>Marmaid HTML</h1>',
     'slug': 'mermaid',
-
+    'images': []
 },
 
 {   'genre': ['print'], 
@@ -43,7 +53,7 @@ db = [
     'mainPage': True, 
     'html': '<h1>Strategic-presentation HTML</h1>',
     'slug': 'strategic-presentation',
-
+    'images': []
  },
 
 {
@@ -57,45 +67,64 @@ db = [
         <h1>Scholarship of the Minister of Culture</h1>
         <p>Scholarship of the Minister of Culture and National Heritage in the Young Poland program, 2012. Visual Arts category,
             Avant Provocateur project – fashion as an aesthetic rebellion.</p>
-        
-            <img src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg"
-                alt=""> <img 
-                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr2_10.jpg"
-                alt=""> <img 
-                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg" alt="">
-            <img
-                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr7.jpg"
-                alt="">
-        
+    
     ''', 
     'slug': 'christmas-trees',
+    'images': [
+        {
+            'src': "https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg",
+            'alt': 'Kartka_Bauer_2018'
+        },
+                {
+            'src': "https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg",
+            'alt': 'Kartka_Bauer_2018 kwadrat'
+        },
+                {
+            'src': "https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg",
+            'alt': 'Kartka_Bauer_2018 kwadrat'
+        },
+    ]
 
 },
 
 {
-    'name': 'Scholarship of the Minister of Culture', 
+    'name': 'Avant Provocateur fashion collection', 
     'description': 'Christmas card for Advertising Department of Bauer Publishing House.  Card designed and printed in 15×15 cm format. Each advertising client of the Bauer Publishing House received them.  project made at the Bauer Publishing House / implementation and implementation 2019 concept / art direction / graphic design: Gosia Gajewska', 
-    'thumbImg': 'https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg', 
+    'thumbImg': 'https://gosiagajewska.com/wpgg/wp-content/uploads/2018/07/DSC_1571.jpg', 
     'genre': ['print', 'artwork'], 
     'id': "6", 
     'mainPage': True, 
     'html': '''
         <h1>Scholarship of the Minister of Culture</h1>
-        <p>Scholarship of the Minister of Culture and National Heritage in the Young Poland program, 2012. Visual Arts category,
-            Avant Provocateur project – fashion as an aesthetic rebellion.</p>
-        
-            <img src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/03/Kartka_Bauer_2018_CHOINKI.jpg"
-                alt=""> <img 
-                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr2_10.jpg"
-                alt=""> <img 
-                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Mockup_DoubleSquare_Leaflet_4_kwadrat3.jpg" alt="">
-            <img
-                src="https://gosiagajewska.com/wpgg/wp-content/uploads/2015/12/Square-Business-Card-Mockup_Bauer_kadr7.jpg"
-                alt="">
-        
+        <p>The subject of my PhD thesis is „AVANT PROVOCATEUR – fashion as aesthetic rebellion „.
+        In 2012 as a result of my study, research, creative thoughts and experience my PhD project started taking shape.
+        In Avant Provocateur fashion collection I am trying to blur the harmful boundary between people with and without disability. The collection consist of eight corrective garments intended for all women. 
+        I would like my clothes to be the medium through which non-disabled people will explore the world of people with disabilities and get used to it. I belive, that main role of the role of the clothing 
+        is not to beautify the body of a person but support its physical condition and health, make the body feel comfortable. This way the art of fashion would make a lot of sense. Therfore, my entire collection has a sporty character.
+         Clothes are mainly made of medical and healthy materials. I used healthy wool fabric, lycra, breathable fabric with silver ions, beneficial health mustard seeds for filling and splinting thermoplastics.
+        In 2013, I organized a photo session of the collection at the Museum of Modern Art in Warsaw. I used the set design created for the exhibition „Square in the Pavilion”. The model posed on the background of exercise equipment.
+        </p>
+        <p>fot. Arkadiusz Wiedeński</p>    
     ''', 
-    'slug': 'scholarship-of-the-minister-of-Culture',
-
+    'slug': 'Avant Provocateur fashion collection',
+    'images': [
+        {
+            'src': "https://gosiagajewska.com/wpgg/wp-content/uploads/2018/07/DSC_1571.jpg",
+            'alt': 'Square Business Card Mockup Bauer'
+        },
+        {
+            'src': "https://gosiagajewska.com/wpgg/wp-content/uploads/2018/07/DSC_1406.jpg",
+            'alt': 'Square Business Card Mockup Bauer'
+        },
+        {
+            'src': "https://gosiagajewska.com/wpgg/wp-content/uploads/2018/07/DSC_1495.jpg",
+            'alt': 'Square Business Card Mockup Bauer'
+        },
+        {
+            'src': "https://gosiagajewska.com/wpgg/wp-content/uploads/2018/07/DSC_1690.jpg",
+            'alt': 'Square Business Card Mockup Bauer'
+        },        
+        ]   
 }
 
 ]

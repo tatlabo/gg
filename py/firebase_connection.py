@@ -35,6 +35,7 @@ def put_into_db(db):
             'html': item['html'],
             'createdAt': firestore.SERVER_TIMESTAMP,
             'updatedAt': firestore.SERVER_TIMESTAMP,
+            'images': item['images']
         })
 	
 put_into_db(db)
