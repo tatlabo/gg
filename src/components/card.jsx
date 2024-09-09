@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 
 
 export default function Card({ name, thumbImg, slug, id, ...rest }) {
-    console.log(rest.createdAt.seconds)
     return (
         <article className="card" id={id} data-id={id}>
             <div className="img-container">

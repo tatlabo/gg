@@ -23,7 +23,7 @@ import { Contact } from './components/contact.jsx';
 const router = createBrowserRouter([
   { element: <Layout 
       navbarList={['Works', 'Bio', 'Contact']} 
-      worksList={['all', 'print', 'sign', 'poster', 'artwork']} />, 
+      worksList={['all', 'print', 'sign', 'poster', 'artwork']}/>, 
     children: [
       {index: true, path:'/', element: <Root main={true}/>, loader: rootLoader },
       {path: '/work/:slug', element: <Work/>, loader: workLoader },
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
 }])
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <RouterProvider router={ router }/>
-  </StrictMode>,
+  // <StrictMode>
+  // </StrictMode>,
 )
