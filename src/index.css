@@ -6,40 +6,44 @@
   --animation: .25s;
   --font-root: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --px: 0 5vw 0 5vw;
-  --accent-color: #800080;
+
   --accent-active: #1d1160;
   --accent-active-30: hsla(249, 70%, 22%, 0.301);
   --accent-color-hover: #018f01;
+  --accent-color-hover-dark-theme: #4bff4b;
   --gradient-yellow: radial-gradient(ellipse at center, #efd10eb0 0%,#edde8edc 100%);
   --active: rgb(23, 22, 82);
   --dark: rgb(8,8,16);
   --grey: rgb(83, 83, 83);
   --header-background: rgb(128,0,128);
   --header-background-gradient: radial-gradient(circle, rgba(128,0,128,0.8785889355742297) 0%, rgba(255,241,0,0.39119397759103647) 100%);
-  --color-light: #f6ffd6;
   --dropdownmenu-background: var(--dark);
-  --description-link-color: var(--color-light);
 
+  color-scheme: light;
+  
+  
+  --color-main-accent: unset; 
+  --color-hover: #EC2049;
+  --color-orange: #F26B38;   
+  --color-accent-light: #F7DB4F;   
+  --color-text: #1a1b1b; 
+  --color-white: #f6ffd6;
+  --color-light: #f6ffd6;
+  --color-active: #d55669;
+  --background-body: radial-gradient(circle, rgba(233,117,92,1) 0%, rgba(222,90,111,1) 100%);
 }
 
-[ data-theme="dark"] {
-  --background-color: #333;
-  --text-color: #fff;
-}
+
 
 
 html,
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
   font-family: var(--font-root);
 }
 
 
 body,
 #root {
-  
-  /* background-color: rgb(131, 131, 131); */
   margin: 0;
   padding: 0;
 }
@@ -48,6 +52,69 @@ body * {
   box-sizing: border-box;
   /* border: 1px dotted red; */
 }
+
+
+
+/* [data-theme='light'] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+
+} */
+
+/* Colors */
+
+body {
+  background-color: var(--color-main-accent);
+  background: var(--background-body);
+  color: var(--color-text);
+}
+
+nav, .dropdownmenu {
+  background: var(--color-main-accent);
+}
+
+
+
+nav a, 
+.works,
+.description,
+.description a,
+.header,
+.header a,
+.header h1 a {
+  color: var(--color-text);
+}
+
+.works:hover,
+.dropdownmenu a:hover, 
+nav a:hover {
+  color: var(--color-hover);
+}
+
+
+
+.description {
+  background-color: var(--color-main-accent);
+}
+
+
+.header:hover {
+  background: var(--header-background);
+  background: var(--header-background-gradient);
+}
+
+.active {
+  color: var(--color-active);
+}
+
+button.theme-switcher {
+  filter: invert(75%) sepia(99%) saturate(521%) hue-rotate(359deg) brightness(107%) contrast(108%);
+}
+
+button.moon {
+  filter: invert(47%) sepia(76%) saturate(2840%) hue-rotate(163deg) brightness(97%) contrast(101%);
+}
+
 
 
 nav {
@@ -61,13 +128,8 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: var(--accent-color);
 }
 
-nav a:hover {
-  text-decoration: none;
-  color: var(--accent-color-hover);
-}
 
 nav a:not(:first-child) {
   margin-left: 1rem;
@@ -78,6 +140,19 @@ nav a:first-child {
   justify-self: start;
   margin-right: auto;
 }
+
+
+button.theme-switcher {
+  background: none;
+  border: none;
+  padding-left: 1rem;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 /* nav a:not(:first-child):hover {
   color: var(--accent-color-hover);
@@ -91,16 +166,10 @@ nav a:first-child {
 .works {
   font-weight: 700;
   cursor: pointer;
-  color: var(--accent-color);
 }
 
-.works:hover,
-.dropdownmenu a:hover {
-  color: var(--accent-color-hover);
-}
 
 .active {
-  color: var(--accent-active);
   font-weight: 700;
 }
 
@@ -109,7 +178,6 @@ nav a:first-child {
   top: 3rem;
   left: 0;
   margin: -.5rem;
-  background-color: #fff;
   justify-content: center;
   align-content: center;
   list-style: none;
@@ -117,7 +185,6 @@ nav a:first-child {
   margin: -1rem 0 1rem -.5rem;
   z-index: 101;
   border-radius: .5rem;
-
   box-shadow: 0 0 1rem var(--accent-active-30);
 }
 
@@ -131,22 +198,6 @@ nav a:first-child {
 }
 
 
-/* .column {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-}
-
-
-.column > * {
-  align-self: flex-start;
-} */
-
-
-/* .grid {
-  display: grid;
-} */
 nav,
 .description h1,
 .description p,
@@ -156,15 +207,10 @@ nav,
 
 
 .description {
-  background-color: var(--accent-color);
   padding-top: 1.75rem;
   padding-bottom: 3rem;
 }
 
-.description,
-.description a {
-  color: var(--color-light);
-}
 
 .description > img {
   width: 100%;
@@ -206,12 +252,6 @@ nav .logo img {
   flex-direction: column;
 }
 
-.header,
-.header a,
-.header h1 a {
-  color: var(--color-light);
-}
-
 .card .header,
 .card .img-container,
 .card .description {
@@ -230,8 +270,6 @@ nav .logo img {
   font-size: .75rem;
 }
 
-
-
 .img-container {
   overflow: hidden;
 }
@@ -246,12 +284,10 @@ nav .logo img {
   flex: 1 1 33%;
 }
 
-
 .mainGrid {
   margin: 0;
   padding: 0;
   display: flex;
-  /* gap: 4rem; */
   flex-direction: column;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -276,22 +312,11 @@ nav .logo img {
   /* animation: gradientAnimation 3s ease-in; */
 }
 
-
 .header:hover {
   height: 100%;
   opacity: 1;
   transform: translate(0, 0);
-  background: var(--header-background);
-  background: var(--header-background-gradient);
 }
-
-.bio {
-  background-color: var(--accent-color);
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-}
-
-
 
 
 .description * img {
@@ -302,41 +327,6 @@ nav .logo img {
   margin-right: auto;
 }
 
-
-/* @media (prefers-color-scheme: dark) {
-
-  .description,
-  .description > * {
-    color: var(--color-light);
-  }
-
-  .dropdownmenu {
-    background-color: var(--dropdownmenu-background);
-  }
-
-} */
-
-
-/* @media (prefers-color-scheme: light) {
-  .description {
-    color: var(--color-light);
-  }
-
-  .dropdownmenu {
-    background-color: var(--dark);
-  }
-
-  .description,
-  .description a {
-    color: #fff;
-  }
-
-  .dropdownmenu {
-    background-color: var(--color-light);
-    color: var(--accent-color);
-  }
-
-}  */
 
 
 @media screen and (min-width: 640px) {
@@ -368,3 +358,15 @@ nav .logo img {
   }
 
 }
+
+[data-theme='dark'] {
+
+  --color-main-accent: unset;  
+  --color-red: #EC2049;
+  --color-orange: #F26B38;   
+  --color-accent-light: #F7DB4F;   
+  --color-main-accent-text: #455054; 
+  --color-text: #f6ffd6;
+
+}
+

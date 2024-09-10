@@ -93,7 +93,7 @@ function Navbar({ children, switchTheme, theme }) {
         </div>
         <NavLink to='bio'>Bio</NavLink>
         <NavLink to='Contact'>Contact</NavLink>
-        <button className='theme-switcher' onClick={switchTheme}>{ theme === 'light' ? moon : sun }</button>
+        <button className={theme === 'light' ? `theme-switcher moon` : `theme-switcher sun`} onClick={switchTheme}>{ theme === 'light' ? moon : sun }</button>
     </nav>
     )
 }
