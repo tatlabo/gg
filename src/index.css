@@ -7,30 +7,22 @@
   --font-root: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --px: 0 5vw 0 5vw;
 
-  --accent-active: #1d1160;
-  --accent-active-30: hsla(249, 70%, 22%, 0.301);
-  --accent-color-hover: #018f01;
-  --accent-color-hover-dark-theme: #4bff4b;
-  --gradient-yellow: radial-gradient(ellipse at center, #efd10eb0 0%,#edde8edc 100%);
-  --active: rgb(23, 22, 82);
-  --dark: rgb(8,8,16);
-  --grey: rgb(83, 83, 83);
-  --header-background: rgb(128,0,128);
+
   --header-background-gradient: radial-gradient(circle, rgba(128,0,128,0.8785889355742297) 0%, rgba(255,241,0,0.39119397759103647) 100%);
-  --dropdownmenu-background: var(--dark);
 
   color-scheme: light;
-  
-  
-  --color-main-accent: unset; 
-  --color-hover: #EC2049;
-  --color-orange: #F26B38;   
-  --color-accent-light: #F7DB4F;   
+  --color-main: #eeeeee;
+  --color-hover: #fa64b5;
+  --color-accent-light: #ccc5b7;   
   --color-text: #1a1b1b; 
   --color-white: #f6ffd6;
   --color-light: #f6ffd6;
   --color-active: #d55669;
   --background-body: radial-gradient(circle, rgba(233,117,92,1) 0%, rgba(222,90,111,1) 100%);
+  --color-shadow: rgb(26, 27, 27, .330); 
+
+  --svg-filter: brightness(0) saturate(100%) invert(93%) sepia(61%) saturate(210%) hue-rotate(25deg) brightness(104%) contrast(103%);
+  --svg-filter-dark: brightness(0) saturate(100%) invert(6%) sepia(6%) saturate(306%) hue-rotate(131deg) brightness(97%) contrast(90%);
 }
 
 
@@ -64,13 +56,13 @@ body * {
 /* Colors */
 
 body {
-  background-color: var(--color-main-accent);
-  background: var(--background-body);
+  /* background-color: var(--color-main-accent); */
+  background: var(--color-main); 
   color: var(--color-text);
 }
 
 nav, .dropdownmenu {
-  background: var(--color-main-accent);
+  background: var(--color-main);
 }
 
 
@@ -94,7 +86,7 @@ nav a:hover {
 
 
 .description {
-  background-color: var(--color-main-accent);
+  background-color: var(--color-main);
 }
 
 
@@ -108,11 +100,12 @@ nav a:hover {
 }
 
 button.theme-switcher {
-  filter: invert(75%) sepia(99%) saturate(521%) hue-rotate(359deg) brightness(107%) contrast(108%);
+  filter: var(--svg-filter);
+  margin-top: .25rem;
 }
 
 button.moon {
-  filter: invert(47%) sepia(76%) saturate(2840%) hue-rotate(163deg) brightness(97%) contrast(101%);
+  filter: var(--svg-filter-dark)
 }
 
 
@@ -122,8 +115,9 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: .25rem;
+  /* margin-top: .25rem; */
   text-decoration: none;
+  /* display: grid; */
 }
 
 nav a {
@@ -154,13 +148,14 @@ button.theme-switcher {
 }
 
 
-/* nav a:not(:first-child):hover {
-  color: var(--accent-color-hover);
-} */
-
-
 .menuWorks {
   position: relative;
+}
+
+
+
+.active {
+  font-weight: 700;
 }
 
 .works {
@@ -168,10 +163,6 @@ button.theme-switcher {
   cursor: pointer;
 }
 
-
-.active {
-  font-weight: 700;
-}
 
 .dropdownmenu {
   position: absolute;
@@ -185,7 +176,7 @@ button.theme-switcher {
   margin: -1rem 0 1rem -.5rem;
   z-index: 101;
   border-radius: .5rem;
-  box-shadow: 0 0 1rem var(--accent-active-30);
+  box-shadow: 0 0 1rem var(--color-shadow);
 }
 
 .flex{
@@ -361,12 +352,12 @@ nav .logo img {
 
 [data-theme='dark'] {
 
-  --color-main-accent: unset;  
+  --color-main: #202020;  
   --color-red: #EC2049;
   --color-orange: #F26B38;   
-  --color-accent-light: #F7DB4F;   
+  --color-accent-light: rgb(247, 219, 79);   
   --color-main-accent-text: #455054; 
   --color-text: #f6ffd6;
-
+  --color-shadow: rgba(247, 219, 79, 0.4); 
 }
 
