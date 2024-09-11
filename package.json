@@ -1,5 +1,4 @@
 { 
-  "homepage": "https://tatlabo.github.io/gg",
   "name": "my-react-gg-website",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deplay": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
