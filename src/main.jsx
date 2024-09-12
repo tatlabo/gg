@@ -24,7 +24,7 @@ import './index.css'
 
 // const layoutList = { navbarList: ['Works', 'Bio', 'Contact'], worksList: []}
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { element: <Layout 
       navbarList={['Works', 'Bio', 'Contact']} 
       worksList={['all', 'print', 'sign', 'poster', 'artwork']}/>, 
