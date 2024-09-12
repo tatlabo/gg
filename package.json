@@ -1,5 +1,5 @@
 {
-    "homepage": "/gg/#",
+    "homepage": "https://tatlabo.github.io/gg/",
     "name": "gg-portfolio",
     "private": true,
     "version": "0.0.0",
@@ -8,7 +8,7 @@
         "dev": "vite",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",
-        "build": "vite build",
+        "build": "vite build && cp build/index.html build/404.html",
         "lint": "eslint .",
         "preview": "vite preview"
     },

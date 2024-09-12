@@ -26,7 +26,7 @@ const router = createHashRouter([
       navbarList={['Works', 'Bio', 'Contact']} 
       worksList={['all', 'print', 'sign', 'poster', 'artwork']}/>, 
     children: [
-      {index: true, path:'/', element: <Root main={true}/>, loader: rootLoader },
+      {index: true, path:'', element: <Root main={true}/>, loader: rootLoader },
       {path: '/work/:slug', element: <Work/>, loader: workLoader },
       // {path: '/works', element: <Root main/>, loader: rootLoader },
       {path: '/bio', element: <Bio/>},
