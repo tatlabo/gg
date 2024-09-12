@@ -24,7 +24,7 @@ import './index.css'
 
 // const layoutList = { navbarList: ['Works', 'Bio', 'Contact'], worksList: []}
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   { element: <Layout 
       navbarList={['Works', 'Bio', 'Contact']} 
       worksList={['all', 'print', 'sign', 'poster', 'artwork']}/>, 
@@ -43,10 +43,10 @@ const router = createHashRouter([
 
 
 createRoot(document.getElementById('root')).render(
-    // <RouterProvider router={ router }/>
+    <RouterProvider router={ router }/>
   // <StrictMode>
   // </StrictMode>,
-  <Bio/>
+  // <Bio/>
   // <HashRouter>
   //   <Routes>
   //     <Route path='/' element={<Bio />}>
