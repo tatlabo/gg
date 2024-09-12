@@ -6,7 +6,8 @@ import {
   RouterProvider,
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  HashRouter,
 } from "react-router-dom";
 
 import { Root } from './components/root.jsx'
@@ -19,7 +20,7 @@ import { genreLoader } from './components/genre.jsx';
 import Layout from './components/layout.jsx';
 import { Bio } from './components/bio.jsx'
 import { Contact } from './components/contact.jsx';
-
+import './index.css'
 
 // const layoutList = { navbarList: ['Works', 'Bio', 'Contact'], worksList: []}
 
@@ -45,10 +46,11 @@ createRoot(document.getElementById('root')).render(
     // <RouterProvider router={ router }/>
   // <StrictMode>
   // </StrictMode>,
-  <BrowserRouter>
-    <Routes>
-      <Route path='' element={<Bio />}>
-      </Route>
-    </Routes>
-  </BrowserRouter>
+  <Bio/>
+  // <HashRouter>
+  //   <Routes>
+  //     <Route path='/' element={<Bio />}>
+  //     </Route>
+  //   </Routes>
+  // </HashRouter>
 )
