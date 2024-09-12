@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
+  createHashRouter,
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
@@ -20,7 +21,7 @@ import { Contact } from './components/contact.jsx';
 
 // const layoutList = { navbarList: ['Works', 'Bio', 'Contact'], worksList: []}
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { element: <Layout 
       navbarList={['Works', 'Bio', 'Contact']} 
       worksList={['all', 'print', 'sign', 'poster', 'artwork']}/>, 
