@@ -3,11 +3,10 @@ import { createRoot } from 'react-dom/client'
 import {
   createHashRouter,
   createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
-  Routes,
-  Route
+  RouterProvider
 } from "react-router-dom";
+// import './tailwind.css'
+import './index.css'
 
 import { Root } from './components/root.jsx'
 import { rootLoader } from './components/root.jsx';
@@ -19,7 +18,6 @@ import { genreLoader } from './components/genre.jsx';
 import Layout from './components/layout.jsx';
 import { Bio } from './components/bio.jsx'
 import { Contact } from './components/contact.jsx';
-
 
 // const layoutList = { navbarList: ['Works', 'Bio', 'Contact'], worksList: []}
 
@@ -38,17 +36,8 @@ const router = createHashRouter([
     ]
 }])
 
-
-
-
 createRoot(document.getElementById('root')).render(
-    // <RouterProvider router={ router }/>
+    <RouterProvider router={ router }/>
   // <StrictMode>
   // </StrictMode>,
-  <BrowserRouter>
-    <Routes>
-      <Route path='' element={<Bio />}>
-      </Route>
-    </Routes>
-  </BrowserRouter>
 )
