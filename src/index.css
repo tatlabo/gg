@@ -10,19 +10,20 @@
 
   --header-background-gradient: radial-gradient(circle, rgba(128,0,128,0.8785889355742297) 0%, rgba(255,241,0,0.39119397759103647) 100%);
 
-  color-scheme: light;
-  --color-main: #eeeeee;
+  --color-main: #700CBC;
+  --color-text: #ffffff;
+  --color-text: #f6ffd6;
   --color-hover: #fa64b5;
   --color-accent-light: #ccc5b7;   
-  --color-text: #1a1b1b; 
   --color-white: #f6ffd6;
   --color-light: #f6ffd6;
-  --color-active: #d55669;
-  --background-body: radial-gradient(circle, rgba(233,117,92,1) 0%, rgba(222,90,111,1) 100%);
+  --color-active: #32f191;
   --color-shadow: rgb(26, 27, 27, .330); 
-
+  
+  --background-body: radial-gradient(circle, rgba(233,117,92,1) 0%, rgba(222,90,111,1) 100%);
   --svg-filter: brightness(0) saturate(100%) invert(93%) sepia(61%) saturate(210%) hue-rotate(25deg) brightness(104%) contrast(103%);
   --svg-filter-dark: brightness(0) saturate(100%) invert(6%) sepia(6%) saturate(306%) hue-rotate(131deg) brightness(97%) contrast(90%);
+  color-scheme: normal ;
 }
 
 
@@ -70,11 +71,14 @@ nav, .dropdownmenu {
 nav a, 
 .works,
 .description,
-.description a,
+.description a {
+  color: var(--color-text);
+}
+
 .header,
 .header a,
 .header h1 a {
-  color: var(--color-text);
+  color: var(--color-light);
 }
 
 .works:hover,
@@ -104,10 +108,18 @@ button.theme-switcher {
   margin-top: .25rem;
 }
 
-button.moon {
-  filter: var(--svg-filter-dark)
+
+.theme-normal svg {
+  transform: rotate(0);
 }
 
+.theme-light svg {
+  transform: rotate(120deg);
+}
+
+.theme-dark svg {
+  transform: rotate(240deg);
+}
 
 
 nav {
@@ -351,13 +363,25 @@ nav .logo img {
 }
 
 [data-theme='dark'] {
-
-  --color-main: #202020;  
-  --color-red: #EC2049;
-  --color-orange: #F26B38;   
-  --color-accent-light: rgb(247, 219, 79);   
-  --color-main-accent-text: #455054; 
+  --color-main: #202020;   
   --color-text: #f6ffd6;
+  --color-accent-light: rgb(0, 217, 255);   
+  --color-main-accent-text: #455054; 
   --color-shadow: rgba(247, 219, 79, 0.4); 
+  --color-active: #d55669;
+  /* --svg-filter: var(--svg-filter); */
+  --color-text: #ffffff;
 }
 
+
+[data-theme='light'] {
+  --color-main: #eeeeee;
+  --color-text: #1a1b1b; 
+  --color-hover: #fa64b5;
+  --color-accent-light: #ccc5b7;   
+  --color-white: #f6ffd6;
+  --color-light: #f6ffd6;
+  --color-active: #d55669;
+  --color-shadow: rgb(26, 27, 27, .330); 
+  --svg-filter: var(--svg-filter);
+}

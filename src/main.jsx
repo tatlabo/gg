@@ -44,13 +44,4 @@ const router = createHashRouter([
 
 createRoot(document.getElementById('root')).render(
     <RouterProvider router={ router }/>
-  // <StrictMode>
-  // </StrictMode>,
-  // <Bio/>
-  // <HashRouter>
-  //   <Routes>
-  //     <Route path='/' element={<Bio />}>
-  //     </Route>
-  //   </Routes>
-  // </HashRouter>
 )
