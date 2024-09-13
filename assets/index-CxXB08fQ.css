@@ -1,1 +1,362 @@
-:root{--animation: .25s;--font-root: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--px: 0 5vw 0 5vw;--header-background-gradient: radial-gradient(circle, rgba(128,0,128,.8785889355742297) 0%, rgba(255,241,0,.39119397759103647) 100%);color-scheme:light;--color-main: #eeeeee;--color-hover: #fa64b5;--color-accent-light: #ccc5b7;--color-text: #1a1b1b;--color-white: #f6ffd6;--color-light: #f6ffd6;--color-active: #d55669;--background-body: radial-gradient(circle, rgba(233,117,92,1) 0%, rgba(222,90,111,1) 100%);--color-shadow: rgb(26, 27, 27, .33);--svg-filter: brightness(0) saturate(100%) invert(93%) sepia(61%) saturate(210%) hue-rotate(25deg) brightness(104%) contrast(103%);--svg-filter-dark: brightness(0) saturate(100%) invert(6%) sepia(6%) saturate(306%) hue-rotate(131deg) brightness(97%) contrast(90%)}html,body{font-family:var(--font-root)}body,#root{margin:0;padding:0}body *{box-sizing:border-box}body{background:var(--color-main);color:var(--color-text)}nav,.dropdownmenu{background:var(--color-main)}nav a,.works,.description,.description a,.header,.header a,.header h1 a{color:var(--color-text)}.works:hover,.dropdownmenu a:hover,nav a:hover{color:var(--color-hover)}.description{background-color:var(--color-main)}.header:hover{background:var(--header-background);background:var(--header-background-gradient)}.active{color:var(--color-active)}button.theme-switcher{filter:var(--svg-filter);margin-top:.25rem}button.moon{filter:var(--svg-filter-dark)}nav{height:4rem;display:flex;justify-content:flex-end;align-items:center;text-decoration:none}nav a{text-decoration:none}nav a:not(:first-child){margin-left:1rem;font-weight:700}nav a:first-child{justify-self:start;margin-right:auto}button.theme-switcher{background:none;border:none;padding-left:1rem;font-family:arial,sans-serif;text-decoration:none;cursor:pointer}.menuWorks{position:relative}.active{font-weight:700}.works{font-weight:700;cursor:pointer}.dropdownmenu{position:absolute;top:3rem;left:0;margin:-.5rem;justify-content:center;align-content:center;list-style:none;padding:1rem;margin:-1rem 0 1rem -.5rem;z-index:101;border-radius:.5rem;box-shadow:0 0 1rem var(--color-shadow)}.flex{display:unset}.m-l-0>*{margin-left:0}nav,.description h1,.description p,.bio{padding:var(--px)}.description{padding-top:1.75rem;padding-bottom:3rem}.description>img{width:100%;max-width:56rem}.bio>*,.description>*,.description div p,.description div h1,nav{margin-left:auto;margin-right:auto;max-width:56rem}nav .logo{width:2.5rem}nav .logo img{display:block}.card{width:100%;aspect-ratio:1.7777;display:grid;grid-template-columns:auto;grid-template-rows:auto;overflow:hidden;position:relative}.card .header{display:flex;flex:1 1 100;flex-direction:column}.card .header,.card .img-container,.card .description{grid-column:1;grid-row:1}.card h1,.card h2{padding:.5em;margin:0;width:100%}.card .header h2{font-size:.75rem}.img-container{overflow:hidden}.card .img-container>img{width:100%;height:100%;object-fit:cover}.img-container>div{flex:1 1 33%}.mainGrid{margin:0;padding:0;display:flex;flex-direction:column;align-items:flex-start;flex-wrap:wrap}.header{opacity:0;transition:all var(--animation) cubic-bezier(0,0,.41,1);height:200%;width:100%;display:flex;text-align:center;justify-content:center;align-items:center}.header:hover{height:100%;opacity:1;transform:translate(0)}.description * img{width:100%;display:block;max-width:56rem;margin-left:auto;margin-right:auto}@media screen and (min-width: 640px){.card{max-width:50%}:root{--px: 0 2rem 0 2rem}.mainGrid{flex-direction:row}}@media screen and (min-width: 960px){.card{max-width:33.33%}}@media screen and (min-width: 1280px){.card{max-width:25%}}[data-theme=dark]{--color-main: #202020;--color-red: #EC2049;--color-orange: #F26B38;--color-accent-light: rgb(247, 219, 79);--color-main-accent-text: #455054;--color-text: #f6ffd6;--color-shadow: rgba(247, 219, 79, .4)}
+:root {
+  --animation: .25s;
+  --font-root: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --px: 0 5vw 0 5vw;
+
+
+  --header-background-gradient: radial-gradient(circle, rgba(128,0,128,0.8785889355742297) 0%, rgba(255,241,0,0.39119397759103647) 100%);
+
+  color-scheme: light;
+  --color-main: #eeeeee;
+  --color-hover: #fa64b5;
+  --color-accent-light: #ccc5b7;   
+  --color-text: #1a1b1b; 
+  --color-white: #f6ffd6;
+  --color-light: #f6ffd6;
+  --color-active: #d55669;
+  --background-body: radial-gradient(circle, rgba(233,117,92,1) 0%, rgba(222,90,111,1) 100%);
+  --color-shadow: rgb(26, 27, 27, .330); 
+
+  --svg-filter: brightness(0) saturate(100%) invert(93%) sepia(61%) saturate(210%) hue-rotate(25deg) brightness(104%) contrast(103%);
+  --svg-filter-dark: brightness(0) saturate(100%) invert(6%) sepia(6%) saturate(306%) hue-rotate(131deg) brightness(97%) contrast(90%);
+}
+
+
+
+
+html,
+body {
+  font-family: var(--font-root);
+}
+
+
+body,
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+  /* border: 1px dotted red; */
+}
+
+
+
+/* [data-theme='light'] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+
+} */
+
+/* Colors */
+
+body {
+  /* background-color: var(--color-main-accent); */
+  background: var(--color-main); 
+  color: var(--color-text);
+}
+
+nav, .dropdownmenu {
+  background: var(--color-main);
+}
+
+
+
+nav a, 
+.works,
+.description,
+.description a {
+  color: var(--color-text);
+}
+
+.header,
+.header a,
+.header h1 a {
+  color: var(--color-light);
+}
+
+.works:hover,
+.dropdownmenu a:hover, 
+nav a:hover {
+  color: var(--color-hover);
+}
+
+
+
+.description {
+  background-color: var(--color-main);
+}
+
+
+.header:hover {
+  background: var(--header-background);
+  background: var(--header-background-gradient);
+}
+
+.active {
+  color: var(--color-active);
+}
+
+button.theme-switcher {
+  filter: var(--svg-filter);
+  margin-top: .25rem;
+}
+
+button.moon {
+  filter: var(--svg-filter-dark)
+}
+
+
+
+nav {
+  height: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* margin-top: .25rem; */
+  text-decoration: none;
+  /* display: grid; */
+}
+
+nav a {
+  text-decoration: none;
+}
+
+
+nav a:not(:first-child) {
+  margin-left: 1rem;
+  font-weight: 700;
+}
+
+nav a:first-child {
+  justify-self: start;
+  margin-right: auto;
+}
+
+
+button.theme-switcher {
+  background: none;
+  border: none;
+  padding-left: 1rem;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.menuWorks {
+  position: relative;
+}
+
+
+
+.active {
+  font-weight: 700;
+}
+
+.works {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.dropdownmenu {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  margin: -.5rem;
+  justify-content: center;
+  align-content: center;
+  list-style: none;
+  padding: 1rem;
+  margin: -1rem 0 1rem -.5rem;
+  z-index: 101;
+  border-radius: .5rem;
+  box-shadow: 0 0 1rem var(--color-shadow);
+}
+
+.flex{
+  display: unset
+
+}
+
+.m-l-0 > *{
+  margin-left: 0;
+}
+
+
+nav,
+.description h1,
+.description p,
+.bio {
+  padding: var(--px)
+}
+
+
+.description {
+  padding-top: 1.75rem;
+  padding-bottom: 3rem;
+}
+
+
+.description > img {
+  width: 100%;
+  max-width: 56rem
+}
+
+.bio > * ,
+.description > *,
+.description div p,
+.description div h1,
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 56rem;
+}
+
+nav .logo {
+  width: 2.5rem;
+
+}
+
+nav .logo img {
+  display: block;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1.7777;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.card .header{
+  display: flex;
+  flex: 1 1 100;
+  flex-direction: column;
+}
+
+.card .header,
+.card .img-container,
+.card .description {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.card h1,
+.card h2 {
+  padding: .5em;
+  margin: 0;
+  width: 100%;
+}
+
+.card .header h2 {
+  font-size: .75rem;
+}
+
+.img-container {
+  overflow: hidden;
+}
+
+.card .img-container>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-container>div {
+  flex: 1 1 33%;
+}
+
+.mainGrid {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+.header {
+  opacity: 0;
+  transition:
+  /* transform var(--animation) ease-in, 
+  opacity var(--animation) ease-in, 
+  background var(--animation) ease-in , 
+  height var(--animation) ease-in; */
+  all var(--animation) cubic-bezier(0,0,.41,1);
+  height: 200%;
+  width: 100%;
+  display: flex;
+  /* transform: translate(0,-50%); */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* animation: gradientAnimation 3s ease-in; */
+}
+
+.header:hover {
+  height: 100%;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+.description * img {
+  width: 100%;
+  display: block;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+@media screen and (min-width: 640px) {
+  .card {
+    max-width: 50%;
+  }
+
+  :root {
+    --px: 0 2rem 0 2rem;
+  }
+
+  .mainGrid {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .card {
+    max-width: 33.33%;
+  }
+
+}
+
+
+
+@media screen and (min-width: 1280px) {
+  .card {
+    max-width: 25%;
+  }
+
+}
+
+[data-theme='dark'] {
+
+  --color-main: #202020;  
+  --color-red: #EC2049;
+  --color-orange: #F26B38;   
+  --color-accent-light: rgb(247, 219, 79);   
+  --color-main-accent-text: #455054; 
+  --color-text: #f6ffd6;
+  --color-shadow: rgba(247, 219, 79, 0.4); 
+}
+
